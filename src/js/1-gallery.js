@@ -1,3 +1,6 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
   {
     preview:
@@ -84,10 +87,7 @@ galleryList.insertAdjacentHTML('beforeend', galleryMarkup.join(''));
 
 let gallery = new SimpleLightbox('.gallery a');
 gallery.on('show.simplelightbox', function () { });
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 const lightbox = new SimpleLightbox('.gallery-link', {
   captionsData: 'alt',
