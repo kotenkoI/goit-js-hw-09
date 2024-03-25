@@ -83,13 +83,29 @@ const galleryMarkup = images.map(
   </li>`
 );
 
-galleryList.insertAdjacentHTML('beforeend', galleryMarkup.join(''));
+const container = document.querySelector('.gallery');
 
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', function () { });
+function createGalleryMarkup(images) {
+  return images
+    .map(
+      ({ preview, original, description }) => `
+    <li class="gallery-item">
+    <a class="gallery-link" href="${original}">
+      <img
+        class="gallery-image"
+        src="${preview}"
+        alt="${description}"
+      />
+    </a>
+  </li>
+`
+    )
+    .join('');
+}
+container.insertAdjacentHTML('beforeend', createGalleryMarkup(images));
 
-
-const lightbox = new SimpleLightbox('.gallery-link', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+lightbox.on('show.simplelightbox', function () {});
