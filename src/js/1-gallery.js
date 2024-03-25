@@ -83,4 +83,8 @@ const galleryMarkup = images.map(
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup.join(''));
 
 let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', function () {});
+gallery.on('show.simplelightbox', function () { });
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
